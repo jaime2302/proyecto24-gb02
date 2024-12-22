@@ -9,7 +9,7 @@ COPY API_Interacciones /app/API_Interacciones
 COPY interacciones.db /app/
 
 # Instala las dependencias necesarias
-RUN pip install fastapi uvicorn sqlalchemy pydantic typing requests
+RUN pip install fastapi pydantic requests sqlalchemy typing uvicorn
 
 # Comando para ejecutar la aplicación
 CMD ["uvicorn", "API_Interacciones.main:app", "--host", "0.0.0.0", "--port", "8002"]
