@@ -299,14 +299,14 @@ def insert_content_into_LP(db: Session, usuario_id: str, contenido_id: str):
         raise Exception(f"Error al conectarse con la API de usuarios: {e}")
 
     # Validar si el usuario tiene listaPersonalizada
-    id_LP = usuario['idListaPersonalizada']
-    if not id_LP:
+    id_lp = usuario['idListaPersonalizada']
+    if not id_lp:
         raise Exception(f"No se encontró una ListaPersonalizada para el usuario con ID {usuario_id}")
 
     # Crear una nueva entrada en la listaPersonalizada del usuario
     try:
         db_LP = models.ListaPersonalizada(
-            idLista=id_LP,
+            idLista=id_lp,
             idContenido=contenido_id
         )
         db.add(db_LP)
