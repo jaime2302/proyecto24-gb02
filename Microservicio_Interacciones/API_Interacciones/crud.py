@@ -115,8 +115,8 @@ def mostrar_me_gusta(db: Session, usuario_id: str):
     return me_gusta
 
 #Función para dar "Me Gusta" a un contenido por un usuario
-def dar_me_gusta(db: Session, idUsuario: str, idContenido: str):
-    tupla_lista = models.ListaMeGusta(idUsuario=idUsuario,
+def dar_me_gusta(db: Session, id_usuario: str, idContenido: str):
+    tupla_lista = models.ListaMeGusta(idUsuario=id_usuario,
                                       idContenido=idContenido)
     db.add(tupla_lista)
     db.commit()
